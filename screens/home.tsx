@@ -39,7 +39,7 @@ const Home = () => {
       ></Button>
 
       <Button
-        title="Go to next"
+        title="Dog"
         variant="bordered"
         onPress={() => navigation.navigate(ROUTES.dog)}
       ></Button>
