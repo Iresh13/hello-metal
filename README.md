@@ -47,6 +47,7 @@ Or use QR code below:
 
 <img width="313" height="280" alt="Screenshot 2026-04-27 at 3 46 07 PM" src="https://github.com/user-attachments/assets/64a4dd18-59df-40d2-942a-af77a443e3a6" />
 
-
+video link: 
+https://drive.google.com/file/d/1JQibTfjTz1O2jYrBe71730dpJMt3XB2I/view?usp=sharing
 
 -- Generated using Claude
