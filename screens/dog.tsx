@@ -1,10 +1,19 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import React from "react";
+import { useQuery } from "@tanstack/react-query";
+import { QUERIES } from "../constants/queries";
+import { getDog } from "../api/getDog";
 
 const Dog = () => {
+  const { data: dogs } = useQuery({
+    queryKey: [QUERIES.getDog],
+    queryFn: () => getDog(),
+  });
+
+  console.log(dogs);
   return (
     <View>
-      <Text>Dog</Text>
+      <Image src={dogs} width={200} height={200} />
     </View>
   );
 };
