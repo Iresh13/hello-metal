@@ -1,8 +1,9 @@
-import { View, Text, Button } from "react-native";
+import { View, Text, Button, Vibration, Alert } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { ROUTES } from "../constants/routes";
-
+import * as Haptics from "expo-haptics";
+import Layout from "./layout/layout";
 interface NavigationProps {
   navigate: (screen: string) => void;
 }
@@ -10,15 +11,37 @@ interface NavigationProps {
 const Home = () => {
   const navigation = useNavigation<NavigationProps>();
 
+  const onPressHelloMetal = () => {
+    Vibration.cancel();
+    Vibration.vibrate(100);
+
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+
+    setTimeout(() =>
+      Alert.alert("Hello Metal", "Metal Button Pressed", [
+        {
+          text: "OK",
+        },
+      ]),
+    );
+  };
+
   return (
-    <View>
-      <Text>Home</Text>
+    <Layout>
+      <Text>Hello Metal</Text>
+
+      <Button
+        title="Hello Metal"
+        onPress={() => {
+          onPressHelloMetal();
+        }}
+      ></Button>
 
       <Button
         title="Go to next"
         onPress={() => navigation.navigate(ROUTES.dog)}
       ></Button>
-    </View>
+    </Layout>
   );
 };
 

@@ -10,8 +10,20 @@ const Stack = createNativeStackNavigator();
 const Screens = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name={ROUTES.home} component={Home} />
-      <Stack.Screen name={ROUTES.dog} component={Dog} />
+      <Stack.Screen
+        name={ROUTES.home}
+        component={Home}
+        options={{
+          headerTransparent: true,
+        }}
+      />
+      <Stack.Screen
+        name={ROUTES.dog}
+        component={Dog}
+        options={{
+          headerTransparent: true,
+        }}
+      />
     </Stack.Navigator>
   );
 };
