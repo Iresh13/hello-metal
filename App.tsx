@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Dog from "./screens/dog";
+import Home from "./screens/home";
+import { ROUTES } from "./constants/routes";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationProvider } from "./providers/navigation";
+
+const Stack = createNativeStackNavigator();
+
+const Screens = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name={ROUTES.home} component={Home} />
+      <Stack.Screen name={ROUTES.dog} component={Dog} />
+    </Stack.Navigator>
+  );
+};
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationProvider>
+      <Screens />
+    </NavigationProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
