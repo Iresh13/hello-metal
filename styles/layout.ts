@@ -5,5 +5,6 @@ export const layoutStyle = StyleSheet.create({
     paddingTop: 60,
     flex: 1,
     paddingHorizontal: 20,
+    gap: 20,
   },
 });

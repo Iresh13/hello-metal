@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { QUERIES } from "../constants/queries";
 import { getDog } from "../api/getDog";
 import Layout from "./layout/layout";
-import { imageStyle } from "./layout/image";
+import { imageStyle } from "../styles/image";
 
 const Dog = () => {
   const {
@@ -19,11 +19,13 @@ const Dog = () => {
   const showLoader = isLoading || isRefetching;
 
   if (showLoader) {
-    <Layout
-      styles={{ alignItems: "center", justifyContent: "center", flex: 1 }}
-    >
-      <ActivityIndicator size="large" color={"#4ade80"} />
-    </Layout>;
+    return (
+      <Layout
+        styles={{ alignItems: "center", justifyContent: "center", flex: 1 }}
+      >
+        <ActivityIndicator size="large" color={"#4ade80"} />
+      </Layout>
+    );
   }
 
   return (
